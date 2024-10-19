@@ -1,9 +1,8 @@
 ﻿
-using Core.CommandAndQueryHandler;
+using Core.Cqrs.CommandAndQueryHandler;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using Template.Domain.ExampleAggregate;
 
 namespace Template.Command.Database
 {
@@ -32,8 +31,6 @@ namespace Template.Command.Database
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-
-        public DbSet<Example> Examples => Set<Example>();
 
 
     }

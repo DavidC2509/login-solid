@@ -1,10 +1,5 @@
-﻿using Core.Domain.Domain;
-using Core.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Cqrs.Domain;
+using Core.Cqrs.Domain.Domain;
 
 namespace Template.Domain.UserAggregate
 {
@@ -31,7 +26,7 @@ namespace Template.Domain.UserAggregate
             Phone = phone;
         }
 
-        public static User CreateUser(string name, string password,string email, string? phone)
-       => new(name,password,email,phone);
+        public static User CreateUser(string name, string password, string email, string? phone)
+       => new(name, password, email, phone);
     }
 }

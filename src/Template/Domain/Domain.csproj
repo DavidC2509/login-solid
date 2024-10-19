@@ -11,10 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="AuthPermissions.AspNetCore" Version="8.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\core\Domain\Domain.csproj" />
+    <PackageReference Include="Core.Cqrs.Domain" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

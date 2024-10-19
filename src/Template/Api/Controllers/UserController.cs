@@ -1,11 +1,8 @@
-﻿using Core.Controller;
+﻿using ControllerCqrs;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Template.Domain.Interface;
 using Template.Services.Command.UserCommand;
-using Template.Services.Models;
-using Template.Services.Query.ExampleQuery;
 
 namespace Template.Api.Controllers
 {
@@ -44,6 +41,6 @@ namespace Template.Api.Controllers
             var result = await SendRequest(command);
 
             return result;
-        } 
+        }
     }
 }

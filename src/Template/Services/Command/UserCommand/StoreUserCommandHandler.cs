@@ -1,13 +1,8 @@
-﻿using Core.CommandAndQueryHandler;
-using Core.Domain.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Core.Cqrs.CommandAndQueryHandler;
+using Core.Cqrs.Domain.Repository;
 using Template.Domain.Interface;
 using Template.Domain.UserAggregate;
-using Template.Domain.UserAggregate.Spec;
 
 namespace Template.Services.Command.UserCommand
 {
@@ -30,7 +25,7 @@ namespace Template.Services.Command.UserCommand
                 await _repository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
