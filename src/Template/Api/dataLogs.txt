@@ -4,3 +4,9 @@ LoginUser-Logs Login user username;string
 --------------------------------------------------
 LoginUser-Logs Login user username;David2
 --------------------------------------------------
+LoginUser-Logs Login user username;David2
+--------------------------------------------------
+RegisterUser-Register User from data username David2
+--------------------------------------------------
+LoginUser-Logs Login user username;David2
+--------------------------------------------------
