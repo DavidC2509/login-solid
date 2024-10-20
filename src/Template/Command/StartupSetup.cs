@@ -10,9 +10,13 @@ namespace Template.Command
         {
 
             services.AddDbContext<DataBaseContext>(options =>
-              options.UseSqlServer(
+              options.UseNpgsql(
                 connectionString,
-                    x => x.MigrationsAssembly("Template.Command").EnableRetryOnFailure()));
+                psqlOptions =>
+                {
+                    psqlOptions.MigrationsAssembly("Template.Command").EnableRetryOnFailure();
+                    psqlOptions.ExecutionStrategy(c => new RetryingPostgresExecutionStrategy(c));
+                }));
         }
     }
 }

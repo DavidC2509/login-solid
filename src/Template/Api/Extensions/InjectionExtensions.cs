@@ -7,17 +7,15 @@ namespace Template.Api.Extensions
     public static class InjectonExtensions
     {
 
-        public static void ConfigureResponseCaching(this IServiceCollection services) => services.AddResponseCaching();
-
         public static void ConfigureSwagger(this WebApplicationBuilder builder)
         {
             builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "David Template",
+                Title = "David Login Solid",
                 Version = "v1",
-                Description = "Backend Tempalte",
+                Description = "Backend Login Solid",
                 Contact = new OpenApiContact
                 {
                     Name = "davidfernando.chavez777@gmail.com"

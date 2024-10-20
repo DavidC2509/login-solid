@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Template.Domain.Interface;
+using Template.Services.Services;
 
 namespace Template.Services
 {
@@ -15,7 +17,9 @@ namespace Template.Services
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             // Todos los repositorys
+            services.AddScoped<IEncryptPassword, EncryptPasswordSha256>();
 
+            services.AddScoped<ILogServices, LogsSaveDatabase>();
 
             return services;
         }

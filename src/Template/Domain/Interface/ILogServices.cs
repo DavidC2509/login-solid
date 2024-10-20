@@ -2,6 +2,6 @@
 {
     public interface ILogServices
     {
-        bool SaveLogsService(string messageLogs);
+        Task<bool> SaveLogsService(string title, string messageLogs, CancellationToken cancellationToken);
     }
 }

@@ -23,9 +23,9 @@ namespace Template.Api.Controllers
         ///Crear Usuario
         ///</summary>
         [HttpPost("store")]
-        public async Task<ActionResult<bool>> StoreUser([FromBody] StoreUserCommand command)
+        public async Task<ActionResult<bool>> StoreUser([FromBody] StoreUserCommand command, CancellationToken cancellationToken)
         {
-            _logsServices.SaveLogsService($"Register User from data username {command.Name}");
+            await _logsServices.SaveLogsService("RegisterUser", $"Register User from data username {command.Name}", cancellationToken);
             var result = await SendRequest(command);
 
             return result;
@@ -35,9 +35,9 @@ namespace Template.Api.Controllers
         ///Login
         ///</summary>
         [HttpPost("login")]
-        public async Task<ActionResult<bool>> LoginUser([FromBody] LoginUserCommand command)
+        public async Task<ActionResult<bool>> LoginUser([FromBody] LoginUserCommand command, CancellationToken cancellationToken)
         {
-            _logsServices.SaveLogsService($"Logs Login user username;{command.Name}");
+            await _logsServices.SaveLogsService("LoginUser", $"Logs Login user username;{command.Name}", cancellationToken);
             var result = await SendRequest(command);
 
             return result;
