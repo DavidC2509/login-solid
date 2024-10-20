@@ -1,11 +1,14 @@
 ﻿using Core.Cqrs.Domain.Repository;
 using Template.Domain.Interface;
 using Template.Domain.LogsAggregate;
+using Template.Domain.LogsAggregate.Enum;
 
 namespace Template.Services.Services
 {
     public class LogsSaveDatabase : ILogServices
     {
+        public LogsType UseLogsType => LogsType.SaveDatabase;
+
         private readonly IRepository<Logs> _repository;
 
         public LogsSaveDatabase(IRepository<Logs> repository)

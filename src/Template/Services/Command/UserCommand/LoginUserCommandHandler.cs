@@ -1,23 +1,27 @@
 ﻿
 using Core.Cqrs.CommandAndQueryHandler;
 using Core.Cqrs.Domain.Repository;
-using Template.Domain.Interface;
 using Template.Domain.UserAggregate;
 using Template.Domain.UserAggregate.Spec;
+using Template.Services.Services;
 
 namespace Template.Services.Command.UserCommand
 {
     public class LoginUserCommandHandler : BaseCommandHandler<IRepository<User>, LoginUserCommand, bool>
     {
-        private readonly IEncryptPassword _encrypPassword;
+        private readonly PasswordServiceFactory _passwordServiceFactory;
 
-        public LoginUserCommandHandler(IRepository<User> repository, IEncryptPassword encrypPassword) : base(repository)
+
+        public LoginUserCommandHandler(IRepository<User> repository, PasswordServiceFactory passwordServiceFactory) : base(repository)
         {
-            _encrypPassword = encrypPassword;
+            _passwordServiceFactory = passwordServiceFactory;
         }
 
         public async override Task<bool> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
+            // Obtener el servicio de log según la rotación actual
+            var _encrypPassword = _passwordServiceFactory.GetCurrentLogService();
+
             var spec = new UserByNameSpec(request.Name);
             var user = await _repository.FirstOrDefaultAsync(spec, cancellationToken);
 

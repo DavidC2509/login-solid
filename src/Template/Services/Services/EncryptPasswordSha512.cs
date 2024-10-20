@@ -1,11 +1,14 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using Template.Domain.Interface;
+using Template.Domain.UserAggregate.Enum;
 
 namespace Template.Services.Services
 {
     public class EncryptPasswordSha512 : IEncryptPassword
     {
+        public EncrypType UseEncrypType => EncrypType.EncryptHas512;
+
         public string EncryptPassword(string password)
         {
             using (SHA512 sha512 = SHA512.Create())

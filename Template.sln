@@ -17,11 +17,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Template\Api\Api
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{5E329B3A-CB81-44A1-B283-D7D302A033DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.AppHost", "src\Aspire\Template.AppHost\Template.AppHost.csproj", "{A5186288-08A8-4A79-91FC-D83C5E69B2DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.AppHost", "src\Aspire\Template.AppHost\Template.AppHost.csproj", "{A5186288-08A8-4A79-91FC-D83C5E69B2DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.ServiceDefaults", "src\Aspire\Template.ServiceDefaults\Template.ServiceDefaults.csproj", "{F180CE25-C8AC-4C3E-8F28-1B7F8486818D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMigrate", "src\Template\TemplateMigrate\TemplateMigrate.csproj", "{D5FBCD02-40F9-4749-8AB8-47B15DED3A1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMigrate", "src\Template\TemplateMigrate\TemplateMigrate.csproj", "{D5FBCD02-40F9-4749-8AB8-47B15DED3A1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{DCB68C08-E117-4F1B-BBDC-AC0B9BD818E9}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +76,7 @@ Global
 		{A5186288-08A8-4A79-91FC-D83C5E69B2DF} = {5E329B3A-CB81-44A1-B283-D7D302A033DC}
 		{F180CE25-C8AC-4C3E-8F28-1B7F8486818D} = {5E329B3A-CB81-44A1-B283-D7D302A033DC}
 		{D5FBCD02-40F9-4749-8AB8-47B15DED3A1D} = {85174412-4283-4799-9D59-1214A5CF9CF5}
+		{DCB68C08-E117-4F1B-BBDC-AC0B9BD818E9} = {414CD4F6-8EB6-4C6D-B1A9-F59E93AD6F66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5815BB7-C13A-4B90-AEFE-A63BFED37347}

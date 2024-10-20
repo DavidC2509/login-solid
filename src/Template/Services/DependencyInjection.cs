@@ -17,10 +17,16 @@ namespace Template.Services
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             // Todos los repositorys
+            services.AddScoped<IEncryptPassword, EncryptPasswordSha512>();
+            services.AddScoped<IEncryptPassword, EncryptPasswordSha384>();
             services.AddScoped<IEncryptPassword, EncryptPasswordSha256>();
 
+            services.AddScoped<ILogServices, LogsSaveApi>();
+            services.AddScoped<ILogServices, LogsSaveFile>();
             services.AddScoped<ILogServices, LogsSaveDatabase>();
 
+            services.AddSingleton<LogServiceFactory>();
+            services.AddSingleton<PasswordServiceFactory>();
             return services;
         }
 
